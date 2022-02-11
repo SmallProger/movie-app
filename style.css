@@ -1,0 +1,237 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0px;
+}
+:root {
+  --first-color: #000;
+  --secondary-color: rgba(110, 110, 110, 0.664);
+  --font1: "Roboto", sans-serif;
+  --font2: "Staatliches", cursive;
+}
+body {
+  font-family: var(--font1);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+header {
+  justify-self: flex-start;
+  position: sticky;
+  top: -10px;
+  z-index: 10001;
+}
+footer {
+  justify-self: flex-end;
+}
+header .container {
+  display: flex;
+  padding: 10px 20px;
+  margin-top: 8px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--first-color);
+}
+.tmbd_logo {
+  height: 40px;
+  width: 200px;
+  background-image: url("./assets/svg/tmbd_logo.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.app_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.app_logo_text {
+  color: #fff;
+  font-size: 50px;
+  font-family: var(--font2);
+  font-weight: bold;
+}
+@keyframes logo_pic {
+  from {
+    transform: rotate(-20deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+.app_logo_pic {
+  display: block;
+  height: 57px;
+  width: 50px;
+  background-image: url("./assets/svg/popcorn.svg");
+  background-repeat: no-repeat;
+  animation-name: logo_pic;
+  animation-duration: 1.5s;
+  animation-iteration-count: 4;
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
+}
+
+.header-search {
+  margin-left: auto;
+  display: block;
+  font-size: 20px;
+  padding: 10px;
+  border-color: rgba(0, 0, 0, 0.5);
+  font-family: var(--font1);
+  border-radius: 10px;
+}
+.header-search::placeholder {
+  font-family: var(--font1);
+  font-size: 20px;
+}
+main .container {
+  display: block;
+  height: 100%;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0px;
+}
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--first-color);
+  animation-direction: alternate;
+}
+.movie-poster {
+  width: 100%;
+}
+.movie-name {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.movie-info {
+  position: absolute;
+  border: 20px;
+  padding: 5px;
+  top: 100%;
+  transition: 0.5s;
+  font-size: 18px;
+  background-color: #fff;
+  overflow-y: scroll;
+  max-height: 100%;
+  opacity: 0.9;
+}
+.movie:hover .movie-info {
+  transform: translateY(-100%);
+}
+.movie_mark {
+  display: block;
+  position: absolute;
+  font-family: var(--font2);
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  padding: 5px;
+  top: 10px;
+  color: #fff;
+  left: 10px;
+  font-size: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+footer .container {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  align-items: center;
+  padding: 20px 50px;
+  letter-spacing: 2px;
+}
+.notice {
+  font-family: var(--font2);
+  word-spacing: 0.2em;
+  font-weight: 700;
+  color: #000;
+}
+.my_git {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-family: var(--font2);
+}
+.rss_logo {
+  background-image: url("./assets/svg/rs_school.svg");
+  background-size: 100% 100%;
+  height: 40px;
+  width: 100px;
+}
+.preloader {
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(31, 31, 31, 0.815);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+@keyframes preloader_elem {
+  from {
+    height: 10px;
+  }
+  to {
+    height: 100px;
+  }
+}
+
+.preloader div {
+  background-color: #fff;
+  height: 10px;
+  width: 20px;
+  max-height: 100px;
+  animation-name: preloader_elem;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.step2 {
+  animation-delay: 0.5s;
+}
+.step3 {
+  animation-delay: 1s;
+}
+.step4 {
+  animation-delay: 1.5s;
+}
+.step5 {
+  animation-delay: 2s;
+}
+.step6 {
+  animation-delay: 2.5s;
+}
