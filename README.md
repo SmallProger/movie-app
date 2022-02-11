@@ -1,3 +1,3 @@
 Movie-app
 
-Link to private rep https://github.com/rolling-scopes-school/smallproger-JSFEPRESCHOOL.git
+Link to private rep https://rolling-scopes-school.github.io/smallproger-JSFEPRESCHOOL/movie-app/
